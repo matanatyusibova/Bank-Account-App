@@ -21,16 +21,31 @@ let bankAccount = {
        
     },
     checkBalance: function() {
-        alert(this.balanc)
+        alert(this.balance)
     },
     viewTransactionHistory: function() {
-        alert("Transaction history")
-        this.transactions.forEach(function (transaction, index) {
-            alert((index+1) + ". " + transaction)
+        if (this.transactions.length===0) {
             
-        })
+            alert("No transactions yet")
+        }else{
+            let historyText = "Transaction history: \n"
+            for (let i = 0; i < this.transactions.length; i++) {
+               historyText+=(i+1) + ". " + this.transactions[i] + "\n"
+                
+            }
+            alert(historyText)
+        }
+        
+       
+          
+            
+        }
+           
+        
+        
+       
     }
-}
+while(true){
  let action = prompt("Select operation: deposit/ withdraw/ balance/ history")
 
  if (action==="deposit") {
@@ -50,4 +65,5 @@ let bankAccount = {
  }else {
     alert ("Invalid selection")
  }
+}
     
